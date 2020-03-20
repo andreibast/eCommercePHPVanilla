@@ -19,7 +19,7 @@
 
         <div class="col-md-6 offer"> <!-- col-md-6 offer1 Begin-->
 
-            <a href="" class="btn btn-sucess btn-sm">Welcome</a>
+            <a class="btn btn-success btn-sm" href="#">Welcome</a>
             <a href="checkout.php">4 Items In Your Cart | Total Price: $300</a>
 
         </div><!-- col-md-6 offer1 Finish-->
