@@ -14,6 +14,7 @@ body{
     color: #333333;
     background: #f0f0f0;
     overflow-x: hidden;
+    padding-bottom: 100px;
 }
 
 /* Top styles*/
@@ -151,7 +152,9 @@ body{
     text-align: center;
 }
 
-#advantages .box{ /*this creates the actual boxes for each content*/
+
+
+.box{ /*this creates the actual boxes for each content*/
     background: #ffffff;
     margin: 0 0 30px;
     border: solid 1px #e6e6e6;
@@ -195,7 +198,89 @@ body{
     color: #555555;
 }
 
+/****************************
+5.CSS Latest products title 
+*****************************/
+
+
 /**/
+#hot h2{                 /*for title*/
+    font-size: 36px;
+    font-weight: 400;
+    color:#4fbfa8;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/****************************
+6.CSS Products themselves 
+*****************************/
+
+
+#content{  /*left distance from the left margin*/
+    padding-left: 25px;
+
+}
+
+.single{   /*locking tile size*/
+    width:290px;
+}
+
+@media(max-width:768px){   /*adaptive tile size to browser size "in steps" , and also centering them if for mobile*/
+    .single{
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+#content .product{  /*encapsulating the image, title and the buttons into a common rectangle*/
+    background: #ffffff;
+    border: solid 1px #e6e6e6;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+#content .product .text{ /*adding some padding to the contents*/
+    padding: 10px 10px 0px;
+}
+
+#content .product .text p.price{/*alignment of the text and adjusting the size*/
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#content .product .text .button{ /*alignment to these items*/
+    text-align: center;
+    clear: both;
+}
+
+#content .product .text .button .btn{ /*giving more white space to the bottom of the buttons*/
+    margin-bottom: 10px;
+}
+
+#content .product .text  h3 a{ /*change the color to these items*/
+    color: rgb(85, 85, 85);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
