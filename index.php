@@ -19,7 +19,7 @@
 
     <!----------------------------------------------------
     1.BUILDING TOP BAR
------------------------------------------------------>
+    ----------------------------------------------------->
     <div id="top"><!-- Top Begin -->
        
         <div class="container"><!-- container Begin -->
@@ -215,6 +215,59 @@
         </div><!--col-md-12 Finish-->
     </div><!--container Finish-->
 
+    <!----------------------------------------------------
+    4.BUILDING THE PAGE CONTENT
+    ----------------------------------------------------->
+    <div id="advantages"><!--advantages Begin-->
+
+        <!----------------------------------------------------
+        4.1.Adding the tiles
+        ----------------------------------------------------->
+        <div class="container"><!--advantages Begin-->
+            
+            <div class="same-height-row"><!--same-height-row Begin-->
+
+                <div class="col-sm-4">
+                    <div class="box same-height">
+                        <div class="icon">
+                            <i class="fa fa-heart"></i> <!--from here you can change the pictogram for each item-->
+                        </div>
+                        <h3><a href="#">Best Offers</a></h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <div class="box same-height">
+                        <div class="icon">
+                            <i class="fa fa-tag"></i>
+                        </div>
+                        <h3><a href="#">Best prices</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+           
+                
+                <div class="col-sm-4">
+                    <div class="box same-height">
+                        <div class="icon">
+                            <i class="fa fa-thumbs-up"></i>
+                        </div>
+                        <h3><a href="#">100% Originals</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+                </div><!--advantages same-height-row Finish-->
+
+        </div><!--advantages Finish-->
+        
+    </div><!--advantages Finish-->
+
+
+
+    
     <!----------------------------------------------------
     -----------ADDING JQUERY AND BOOTSTRAP----------------
     ----------------------------------------------------->

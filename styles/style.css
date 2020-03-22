@@ -1,9 +1,9 @@
 /*
 Template Name : m-dev store
-Author Name   : AndreiBast
+Author Name   : Andrei Bast
 Author Email  : andrei.bast@yahoo.com
 Theme URI     : www.m-dev_store.com / localhost/m-dev-store/eCommercePHPVanilla/
-Theme Ver     : 1.1
+Theme Ver     : 1.0
 */
 
 /*General Styles */
@@ -137,13 +137,65 @@ body{
 }
 
 
+/****************************
+4.CSS FOR CONTENTS
+******************************/
 
 
 
+#slider{  /*changes the spaces between the group items*/
+    margin-bottom: 40px;
+}
 
+#advantages{   /*centers all the text for all of them*/
+    text-align: center;
+}
 
+#advantages .box{ /*this creates the actual boxes for each content*/
+    background: #ffffff;
+    margin: 0 0 30px;
+    border: solid 1px #e6e6e6;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0px 2 px 5 px rgba(0, 0, 0, .3);
+}
 
+#advantages .box .icon{  /*changes the small pictograms settings*/
+    position: absolute;
+    font-size: 120px;
+    width: 100%;
+    top: -20px;
+    left: 0px;
+    height: 100%;
+    float:left;  
+    color: #dadada;
+    box-sizing: border-box;
+    z-index: 1;
+}
 
+#advantages .box h3{ /*brings the h3 on top*/
+    position: relative;
+    margin: 0 0 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+#advantages .box h3 a{ /*changes the color for h3 and its a link*/
+    color: #4fbfaB;
+}
+
+#advantages .box h3 a:hover{  /*we stop the hover effect but we have the mouse changed*/
+    text-decoration: none;
+}
+
+#advantages .box p{ /*bring all the contents from the tile in front(and sends the picture back)*/
+    position: relative;
+    z-index: 2;
+    color: #555555;
+}
+
+/**/
 
 
 
