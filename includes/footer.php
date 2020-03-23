@@ -98,7 +98,7 @@
         <div class="col-md-6">
             <p class="pull-left"><a href="#">2020 M-Dev Store All Rights Reserved</a> </p>
         </div>
-
+        
         <div class="col-md-6">
             <p class="pull-right"> Theme by: <a href="#">&copy; CreatorName</a> </p>
         </div>

@@ -265,6 +265,48 @@ body{
 }
 
 /****************************
+10.CSS SIDEBAR
+*****************************/
+
+#content .panel.sidebar-menu{
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5)
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu{
+    margin-bottom: 20px;
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu li a{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#content .panel.sidebar-menu h3{
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+/****************************
+11.CSS FOR SHOP PRODUCTS
+*****************************/
+@media(max-width: 768px){
+    .center-responsive{
+        width:70%;
+        margin: 0px auto;
+    }
+}
+
+@media(max-width: 550px){
+    .center-responsive{
+        width:95%;
+        margin: 0px auto;
+    }
+}
+
+
+
+/****************************
 7.CSS FOR FOOTER
 *****************************/
 
@@ -332,6 +374,39 @@ body{
 #copyright p{
     margin:0px;
 }
+
+/****************************
+9.QUICK NAVIGATION BAR (SHOP.PHP)
+*****************************/
+
+.breadcrumb{ /*creating white bar that contains the quick-links*/     
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5 px rgba(0, 0, 0, .5);
+}
+
+.breadcrumb > li+li:before{  /*puts a > sign between the links, instead of the default slash*/ 
+    content: ">\00a0";
+    color: #cccccc;
+}
+
+@media (max-width: 991px){  /*adjusts the text a bit better*/ 
+    .breadcrumb{
+        padding: 0px 0px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
