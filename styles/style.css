@@ -239,6 +239,7 @@ body{
     border: solid 1px #e6e6e6;
     margin-bottom: 30px;
     box-sizing: border-box;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
 }
 
 #content .product .text{ /*adding some padding to the contents*/
@@ -258,6 +259,11 @@ body{
 
 #content .product .text .button .btn{ /*giving more white space to the bottom of the buttons*/
     margin-bottom: 10px;
+}
+
+#content .product .text h3{
+    text-align: center;
+    font-size: 20px;
 }
 
 #content .product .text  h3 a{ /*change the color to these items*/
@@ -304,8 +310,39 @@ body{
     }
 }
 
+/****************************
+12.DETAILS.PHP CSS
+*****************************/
+#content #productMain{
+    margin-bottom: 30px;
+}
+
+#content #productMain .price{
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#content #mainImage{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .7);
+}
+
+#content #thumbs a{
+    display: block;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
+    border: 2px solid transparent;
+}
+
+#content .headline{
+    height: 305px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
+}
 
 
+
+
+/**********************************************************************/
 /****************************
 7.CSS FOR FOOTER
 *****************************/
@@ -398,29 +435,3 @@ body{
         text-align: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
