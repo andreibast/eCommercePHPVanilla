@@ -101,7 +101,7 @@
                     <ul class="nav navbar-nav left"><!--nav navbar-nav left Begin-->
 
                     
-                        <li>
+                        <li class="active">  <!------class set to active here--------->
                             <a href="index.php">Home</a>
                         </li>
                         <li>
@@ -113,7 +113,7 @@
                         <li>
                             <a href="cart.php">Cart</a>
                         </li>
-                        <li class="active">  <!------class set to active here--------->
+                        <li>
                             <a href="contact.php">Contact Us</a>
                         </li>
                     </ul><!--nav navbar-nav left Finish-->
@@ -168,7 +168,7 @@
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        Contact Us
+                        Register
                     </li>
                 </ul><!--breadcrumb-->
             </div><!--col md 12-->
@@ -189,33 +189,42 @@
                 <div class="box">
                     <div class="box-header">
                         <center>
-                            <h2> Feel free to Contact Us </h2>
-                            <p class="text-muted">
-                                If you have any questions, feel free to contact us. Our Customer Service work <strong>24/7</strong>
-                            </p>
+                            <h2> Register a new account </h2>
                         </center>
 
-                        <form action="contact.php" class="post">
+                        <form action="customer_register.php" class="post" enctype="multipart/form-data"><!--here are some custom settings-->
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label>Your Name</label>
+                                <input type="text" class="form-control" name="c_name" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label>Your Email</label>
+                                <input type="text" class="form-control" name="c_name" required>
                             </div>
                             <div class="form-group">
-                                <label>Subject</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label>Your Country</label>
+                                <input type="text" class="form-control" name="c_country" required>
                             </div>
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea name="message" class="form-control"></textarea>
+                                <label>Your City</label>
+                                <input type="text" class="form-control" name="c_city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Contact</label>
+                                <input type="text" class="form-control" name="c_contact" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Address</label>
+                                <input type="text" class="form-control" name="c_address" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Profile Picture</label>
+                                <input type="file" class="form-control" name="c_image" required>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-primary">
-                                    <i class="fa fa-user-md"></i> Send Message
+                                <button type="submit" name="register" class="btn btn-primary">
+                                    <i class="fa fa-user-md"></i> Register
                                 </button>
 
                             </div>
