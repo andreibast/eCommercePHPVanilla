@@ -38,16 +38,16 @@
             <div class="col-md-6"><!-- col-md-6 Begin -->
                 <ul class="menu"><!-- cmenu Begin -->
                     <li>
-                        <a href="customer_register.php">Register</a>
+                        <a href="../customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="customer/my_account.php">My Account</a>
+                        <a href="checkout.php">My Account</a>
                     </li>
                     <li>
-                        <a href="cart.php">Go To Cart</a>
+                        <a href="../cart.php">Go To Cart</a>
                     </li>
                     <li>
-                        <a href="checkout.php">Login</a>
+                        <a href="../checkout.php">Login</a>
                     </li>
                 </ul><!-- menu Finish -->
             </div><!-- col-md-6 Finish -->
@@ -102,19 +102,19 @@
 
                     
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="../index.php">Home</a>
+                        </li>
+                        <li >
+                            <a href="../shop.php">Shop</a>
+                        </li>
+                        <li class="active"><!------class set to active here--------->
+                            <a href="my_account.php">My Account</a>
                         </li>
                         <li>
-                            <a href="shop.php">Shop</a>
+                            <a href="../cart.php">Cart</a>
                         </li>
                         <li>
-                            <a href="customer/my_account.php">My Account</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">Cart</a>
-                        </li>
-                        <li class="active">  <!------class set to active here--------->
-                            <a href="contact.php">Contact Us</a>
+                            <a href="../contact.php">Contact Us</a>
                         </li>
                     </ul><!--nav navbar-nav left Finish-->
                 </div><!--padding nav Finish-->
@@ -168,10 +168,12 @@
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        Contact Us
+                        My Account
                     </li>
                 </ul><!--breadcrumb-->
             </div><!--col md 12-->
+
+
 
 
 
@@ -185,59 +187,69 @@
                 ?>
             </div>
 
-            <div class="col-md-9">
-                <div class="box">
-                    <div class="box-header">
-                        <center>
-                            <h2> Feel free to Contact Us </h2>
-                            <p class="text-muted">
-                                If you have any questions, feel free to contact us. Our Customer Service work <strong>24/7</strong>
-                            </p>
-                        </center>
 
-                        <form action="contact.php" class="post">
+                <div class="col-md-9">
+                    <div class="box">
+
+                        <h1 align="center"> Please confirm your payment: </h1>
+                        <form action="confirm.php" method="post" enctype="multipart/form-data">
+
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label> Invoice No: </label>
+                                <input type="text" class= "form-control" name="invoice_no" required>
                             </div>
+
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label> Amount Sent: </label>
+                                <input type="text" class= "form-control" name="amount_sent" required>
                             </div>
+
                             <div class="form-group">
-                                <label>Subject</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <label> Select payment mode: </label>
+                                <select name="payment-mode" class="form-control">
+                                    <option value=""> Select payment mode </option>
+                                    <option value=""> Back Code </option>
+                                    <option value=""> UBL/Omni Paisa </option>
+                                    <option value=""> Easy Paisa </option>
+                                    <option value=""> Western Union </option>
+                                </select>
                             </div>
+
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea name="message" class="form-control"></textarea>
+                                <label> Transaction / Reference ID: </label>
+                                <input type="text" class= "form-control" name="ref_no" required>
                             </div>
+
+                            <div class="form-group">
+                                <label> Omni Paisa / East Paisa: </label>
+                                <input type="text" class= "form-control" name="code" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label> Payment Date: </label>
+                                <input type="text" class= "form-control" name="date" required>
+                            </div>
+
 
                             <div class="text-center">
-                                <button type="submit" name="submit" class="btn btn-primary">
-                                    <i class="fa fa-user-md"></i> Send Message
+                                <button class="btn btn-primary btn-lg">
+                                    <i class="fa fa-user-md"></i> Confirm Payment
                                 </button>
-
                             </div>
                         </form>
-
-
-
+                    
                     </div>
                 </div>
+
             </div>
-
-
-        </div>
     </div>
 
     <!-------------------
     COPY FROM INDEX.PHP
     ----------------------->
     <?php
-        include("includes/footer.php");
+        include("../includes/footer.php");
     ?>
-
 
     <!----------------------------------------------------
     -----------ADDING JQUERY AND BOOTSTRAP----------------

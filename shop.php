@@ -45,7 +45,7 @@ COPY FROM INDEX.PHP
                         <a href="customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="checkout.php">My Account</a>
+                        <a href="customer/my_account.php">My Account</a>
                     </li>
                     <li>
                         <a href="cart.php">Go To Cart</a>
@@ -112,7 +112,7 @@ COPY FROM INDEX.PHP
                             <a href="shop.php">Shop</a>
                         </li>
                         <li>
-                            <a href="checkout.php">Checkout</a>
+                            <a href="customer/my_account.php">My Account</a>
                         </li>
                         <li>
                             <a href="cart.php">Cart</a>
