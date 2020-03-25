@@ -1,7 +1,3 @@
-<!-------------------
-COPY FROM INDEX.PHP
------------------------>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,13 +104,13 @@ COPY FROM INDEX.PHP
                         <li>
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="active"><!------class set to active here--------->
+                        <li>
                             <a href="shop.php">Shop</a>
                         </li>
                         <li>
                             <a href="checkout.php">Checkout</a>
-                        </li>
-                        <li>
+                        </li><!------class set to active here--------->
+                        <li class="active">
                             <a href="cart.php">Cart</a>
                         </li>
                         <li>
@@ -172,163 +168,176 @@ COPY FROM INDEX.PHP
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        Shop
+                        Cart
                     </li>
                 </ul><!--breadcrumb-->
             </div><!--col md 12-->
 
+               <!----------------------------------------------------
+                3.1.QUICK NAVIGATION LINKS
+                ----------------------------------------------------->
+
+                <div id="cart" class="col-md-9">
+                    <div class="box">
+                        <form action="cart.php" method="post" enctype="multipart/form-data">
+                            <h1>Shopping Cart</h1>
+                            <p class="text-muted">You currently have 3 item(s) in your cart</p>
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thread>
+                                        <tr>
+                                            <th colspan="2">Product</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Size</th>
+                                            <th colspan="1">Delete</th>
+                                            <th colspan="2">Sub-Total</th>
+                                        </tr>
+                                    </thread>
+
+                                    <!-------------------
+                                    Product1 in list
+                                    ----------------------->
+                                    <tbody>
+                                        <tr>
+
+                                        <td>
+                                            <img  class="img-responsive"src="admin_area/product_images/Product-3a.jpg" alt="Product 3a">
+                                          
+                                        </td>
+                                        <td>
+                                            <a href="#">M-Dev Polo Shirt Men</a>
+                                        </td>
+
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            $50
+                                        </td>
+                                        <td>
+                                            Large
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="remove[]">
+                                        </td>
+                                        <td>
+                                            $100
+                                        </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                    <!-------------------
+                                    Product2 in list
+                                    ----------------------->
+                                    <tbody>
+                                        <tr>
+
+                                        <td>
+                                            <img  class="img-responsive"src="admin_area/product_images/Product-5a.jpg" alt="Product 5a">
+                                          
+                                        </td>
+                                        <td>
+                                            <a href="#">M-Dev Polo Shirt Men</a>
+                                        </td>
+
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            $50
+                                        </td>
+                                        <td>
+                                            Large
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="remove[]">
+                                        </td>
+                                        <td>
+                                            $100
+                                        </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                    <!-------------------
+                                    Product3 in list
+                                    ----------------------->
+                                    <tbody>
+                                        <tr>
+
+                                        <td>
+                                            <img  class="img-responsive"src="admin_area/product_images/Product-4a.jpg" alt="Product 4a">
+                                          
+                                        </td>
+                                        <td>
+                                            <a href="#">M-Dev Polo Shirt Men</a>
+                                        </td>
+
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            $50
+                                        </td>
+                                        <td>
+                                            Large
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="remove[]">
+                                        </td>
+                                        <td>
+                                            $100
+                                        </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                    
+                                    <!-------------------
+                                    Product3 in list
+                                    ----------------------->
+                                    <tfoot>
+                                        <tr>
+                                            <th>Total</th>
+                                            <th>$100</th>
+                                        </tr>
+                                    </tfoot>
 
 
-
-   <!----------------------------------------------------
-    4.SECTION CONTENTS
-    ----------------------------------------------------->   
-            <div class="col-md-3">
-                <?php
-                    include("includes/sidebar.php");
-                ?>
-            </div>
-
-            <!----------------------------------------------------
-            4.1.Section selection & similar products
-            ----------------------------------------------------->   
-
-            <div class="col-md-9">
-                <div id="productMain" class="row">
-
-                    <!----------------------------------------------------
-                    4.1.1.The image carousel
-                    ----------------------------------------------------->  
-                    <div class="col-sm-6">
-                        <div id="mainImage">
-                            <div id="myCarousel" class="carousel slide">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                </ol>
-
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <center><img class="img-responsive" src="admin_area/product_images/Product-3a.jpg" alt="Product 3-a"></center>
-                                    </div>
-                                    <div class="item">
-                                        <center><img class="img-responsive" src="admin_area/product_images/Product-3b.jpg" alt="Product 3-b"></center>
-                                    </div>
-                                    <div class="item">
-                                        <center><img class="img-responsive" src="admin_area/product_images/Product-3c.jpg" alt="Product 3-c"></center>
-                                    </div>
+                                </table>
+                            </div>                        
+                        
+                            <div class="box-footer">
+                                <div class="pull-left">
+                                    <a href="index.php" class="btn btn-default">
+                                        <i class="fa fa-chevron-left"> Continue Shopping</i>
+                                    </a>
                                 </div>
 
-                                <a href="#myCarousel" class="left carousel-control" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-
-                                <a href="#myCarousel" class="right carousel-control" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                    <span class="sr-only">Forward</span>
-                                </a>
-
-                            </div><!--carousel-->
-                        </div><!--image-->
-                    </div><!--col-sm-6-->
-
-                    <!----------------------------------------------------
-                    4.1.1.Product selection
-                    ----------------------------------------------------->
-
-                    <div class="col-sm-6">
-                        <div class="box">
-                            <h1 class="text-center">M-Dev Polo Shirt Men</h1>
-
-                            <form action="details.php" class="form-horizontal" method="post">
-
-                                <div class="form-group">
-                                    <label for="" class="col-md-5 control-label">Product Quantity</label>
-                                    <div class="col-md-7">
-                                        <select name="" id="" class="form-control">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select> 
-                                    </div>
-                                </div><!--form group-->
-
-                                <div class="form-group">
-                                    <label for="" class="col-md-5 control-label">Product Size</label>
-                                    <div class="col-md-7">
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Select size</option>
-                                            <option value="">Small</option>
-                                            <option value="">Medium</option>
-                                            <option value="">Large</option>
-                                        </select> 
-                                    </div>
-                                </div><!--form group-->
-                                
-                                <p class="price">$50</p>
-                                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
+                                <div class="pull-right">
+                                    <button type= "submit" name ="update" value="Update Cart"  class="btn btn-default">
+                                        <i class="fa fa-refresh"> Update Shopping</i>
+                                    </button>
+                                    <a href="checkout.php" class="btn btn-primary">
+                                        Proceed Checkout <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
 
 
-                            </form>
-                        </div>
 
-                    <!----------------------------------------------------
-                    4.1.2.Product related pictures
-                    ----------------------------------------------------->
-                    
-                    <div class="row" id="thumbs">
-                        <div class="col-xs-4">
-                            <a data-target="#myCarousel" data-slide-to="0" href="#" class="thumb"> <!--mycarousel is here to quick select the picture from the carousel-->
-                                <img src="admin_area/product_images/product-3a.jpg" alt="product 3" class="img-responsive">
-                            </a>
-                        </div>
+                        </form>
+                    </div>
 
-                        <div class="col-xs-4">
-                            <a data-target="#myCarousel" data-slide-to="1" href="#" class="thumb">
-                                <img src="admin_area/product_images/product-3b.jpg" alt="product 3" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="col-xs-4">
-                            <a data-target="#myCarousel" data-slide-to="2" href="#" class="thumb">
-                                <img src="admin_area/product_images/product-3c.jpg" alt="product 3" class="img-responsive">
-                            </a>
-                        </div>
-
-                    </div><!--row-->
-
-                    </div><!--col-6-->
-
-                    
-
-
-                </div>
-
-
-            <!----------------------------------------------------
-            4.2.Product details
-            ----------------------------------------------------->   
-            <div class="box" id="details">
-                <h4>Product Details:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, velit sunt culpa adipisci explicabo ab hic distinctio molestiae similique quos rerum! Blanditiis delectus necessitatibus odit quae dolorum officia sapiente culpa!</p>
-
-                <h4>Available Sizes:</h4>
-
-                <ul>
-                    <li>Small</li>
-                    <li>Medium</li>
-                    <li>Large</li>
-                </ul>
-                <hr>
-            </div>
-
-            <!----------------------------------------------------
-            4.3.What-you-would-like section
-            ----------------------------------------------------->  
+                <!----------------------------------------------------
+                3.2.What-you-would-like section
+                ----------------------------------------------------->  
             <div id="row same-height-row">
 
                 <div class="col-md-3 col-sm-6">
@@ -379,9 +388,53 @@ COPY FROM INDEX.PHP
 
             </div>
 
-            </div>
-        </div>
-    </div>
+                </div>   
+
+                <!----------------------------------------------------
+                3.3.Right-side panel
+                ----------------------------------------------------->  
+
+                <div class="col-md-3">
+                    <div id="order-summary" class="box">
+                        <div class="box-header">
+                            <h3>Order Summary</h3>
+                        </div>
+                        <p class="text-muted">
+                            Shipping and additional costs are calculated based on value that you have entered
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td>Order Sub-Total</td>
+                                    <th> $200 </th>
+                                </tr>
+                                <tr>
+                                    <td>Shipping and Handling</td>
+                                    <td> $0 </td>
+                                </tr>
+                                <tr>
+                                    <td>Tax</td>
+                                    <th> $0 </th>
+                                </tr>
+                                <tr class="total">
+                                    <td>Total</td>
+                                    <th> $200 </th>
+                                </tr>
+
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+        </div><!--container-->
+
+    </div><!--content-->
+
 
     <!-------------------
     COPY FROM INDEX.PHP
@@ -389,6 +442,7 @@ COPY FROM INDEX.PHP
     <?php
         include("includes/footer.php");
     ?>
+
 
     <!----------------------------------------------------
     -----------ADDING JQUERY AND BOOTSTRAP----------------
