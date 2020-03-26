@@ -70,7 +70,7 @@
                 <!---------------------------------------------------------------------
                 2.1.1.Adding the website logo(desktop and mobile) in the navigation bar
                 ----------------------------------------------------------------------->  
-                <a href="index.php" class="navbar-brand home">
+                <a href="../index.php" class="navbar-brand home">
                     <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class ="hidden-xs">   <!--hidden-xs is used to hide the element when the viewport is at a given breakpoint or wider. When the viewport reaches at the XS size"-->
                     <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs"><!-- When the user gets to the smaller-than-desktop viewport, this picture will activate-->
                 </a>
@@ -188,19 +188,36 @@
 
             <div class="col-md-9">
                 <div class="box">
+
                     <?php
                         if(isset($_GET['my_orders'])){
                             include("my_orders.php");
                         }
-                    
                     ?>
-                
+                    <?php
+                        if(isset($_GET['pay_offline'])){
+                            include("pay_offline.php");
+                        }
+                    ?>
+                    <?php
+                        if(isset($_GET['edit_account'])){
+                            include("edit_account.php");
+                        }
+                    ?>
+                    <?php
+                        if(isset($_GET['change_pass'])){
+                            include("change_pass.php");
+                        }
+                    ?>
+                    <?php
+                        if(isset($_GET['delete_account'])){
+                            include("delete_account.php");
+                        }
+                    ?>
+
+
                 </div>
             </div>
-
-
-
-
 
             </div>
     </div>

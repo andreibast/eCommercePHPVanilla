@@ -25,7 +25,7 @@
                 <th> Status: </th>
             </tr>
         </thread>
-
+        <tbody>
         <tr>
             <th> #1 </th>
             <td> $80 </td>
@@ -64,6 +64,7 @@
                 <a href="confirm.php" target="_blank" class="btn btn-primary btn-sm">Confirm Pay</a>
             </td>
         </tr>
+        </tbody>
 
     </table>
 </div>
