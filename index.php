@@ -203,8 +203,6 @@
                         }
 
 
-
-
                         $get_slides = "select * from slider LIMIT 1,3";
 
                         $run_slides = mysqli_query($con, $get_slides);
