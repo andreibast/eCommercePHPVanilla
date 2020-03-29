@@ -201,7 +201,6 @@
         if($run_product){
             echo "<script>alert('Product has been inserted succesfully!')</script>";
             echo "<script>window.open('insert_product.php','_self')</script>";
-
         }
 
     }

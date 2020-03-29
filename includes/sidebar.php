@@ -11,11 +11,9 @@
     ------------------------->
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked category-menu">
-            <li><a href="#">Jackets</a></li>
-            <li><a href="#">Accesories</a></li>
-            <li><a href="#">Shoes</a></li>
-            <li><a href="#">Coats</a></li>
-            <li><a href="#">T-Shirt</a></li>
+           <?php
+            getPCats();
+           ?>
         </ul>
     </div>
     </div>
@@ -34,10 +32,9 @@
     ------------------------->
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked category-menu">
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Kids</a></li>
-            <li><a href="#">Others</a></li>
+            <?php
+                getCats();
+           ?>
         </ul>
     </div>
     </div>
