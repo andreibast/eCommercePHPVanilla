@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2020 at 05:57 AM
+-- Generation Time: Mar 30, 2020 at 06:12 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -75,11 +75,15 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 (4, 5, 1, '2020-03-27 17:27:06', 'Grey Man', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 55, 'Shirt', '<p>Lorem</p>'),
 (6, 3, 2, '2020-03-30 02:30:57', 'High Heels Women Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 235, 'Heels', '<p>Lorem Ipsum</p>'),
 (7, 3, 1, '2020-03-30 02:32:35', 'Man Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 185, 'Sneakers', '<p>Lorem ipsum</p>'),
-(8, 1, 1, '2020-03-30 02:33:53', 'Man Geox Winter jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>'),
+(8, 1, 1, '2020-03-30 15:40:19', 'Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>'),
 (9, 5, 1, '2020-03-30 02:34:47', 'Man Polo', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 35, 'Shirt', '<p>Lorem Ipsum</p>'),
 (10, 2, 4, '2020-03-30 03:13:02', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 79, 'Belt', '<p>Lorem Ipsum</p>'),
 (11, 4, 2, '2020-03-30 02:36:59', 'Red WinterJacket', 'Red-Winter-jacket-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 120, 'Coat', '<p>Lorem Ipsum</p>'),
-(12, 4, 2, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>');
+(12, 4, 2, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
+(13, 1, 1, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
+(14, 1, 1, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
+(15, 1, 2, '2020-03-30 15:33:55', 'Mobile Power Jacket', 'Mobile-Power-Jacket.jpg', 'Mobile-Power-Jacket-2.jpg', 'Mobile-Power-Jacket-3.jpg', 180, 'Women Jacket', '<p>Lorem Ipsum</p>'),
+(16, 5, 1, '2020-03-30 15:39:08', 'Polos T-Shirt', 'polos-tshirt-1.jpg', 'polos-tshirt-2.jpg', '', 60, 'T-Shirt', '<p>Lorem Ipsum</p>');
 
 -- --------------------------------------------------------
 
@@ -168,7 +172,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
