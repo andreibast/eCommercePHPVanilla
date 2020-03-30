@@ -247,7 +247,7 @@ body{
 }
 
 #content .product .text p.price{/*alignment of the text and adjusting the size*/
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     font-weight: 400;
 }
@@ -261,9 +261,9 @@ body{
     margin-bottom: 10px;
 }
 
-#content .product .text h3{
+#content .product .text h3{/*products main title*/
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #content .product .text  h3 a{ /*change the color to these items*/

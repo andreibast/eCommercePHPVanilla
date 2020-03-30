@@ -3,7 +3,6 @@
     include("includes/header.php");
 ?>
 
-
     <!----------------------------------------------------
     3.BUILDING THE CAROUSEL (and space delimitation)
     ----------------------------------------------------->
@@ -49,7 +48,6 @@
 
 
                         $get_slides = "select * from slider LIMIT 1,3";
-
                         $run_slides = mysqli_query($con, $get_slides);
 
                         while($row_slides=mysqli_fetch_array($run_slides)){
@@ -63,13 +61,9 @@
                                     </div>                             
                                 ";
                         }
-
-
-
                     ?>
 
                 </div><!--carousel-inner Finish-->
-
             </div><!--carousel slide Finish-->
 
             <!----------------------------------------------------
@@ -94,7 +88,7 @@
     <div id="advantages"><!--advantages Begin-->
 
         <!----------------------------------------------------
-        4.1.Adding the tiles
+        4.1.Adding the 3 main tiles
         ----------------------------------------------------->
         <div class="container"><!--advantages Begin-->
             
@@ -164,9 +158,9 @@
 
         <div class="row">
 
-        <?php
-            getPro();
-        ?>
+            <?php
+                getPro();
+            ?>
 
         </div><!--row-->
     </div>
@@ -180,8 +174,3 @@
     ----------------------------------------------------->
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
-<!----------------------------------------------------
------------------------END----------------------------
------------------------------------------------------>
-</body>
-</html>
