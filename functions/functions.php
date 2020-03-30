@@ -186,7 +186,7 @@
             $cat_title = $row_cat['cat_title'];
             $cat_desc = $row_cat['cat_desc'];
 
-            $get_products = "select * from products where cat_id ='$cat_id'";
+            $get_products = "select * from products where cat_id ='$cat_id' LIMIT 0,6";
 
             $run_products = mysqli_query($db, $get_products);
             $count = mysqli_num_rows($run_products);
@@ -245,7 +245,9 @@
                     </div>
                 ";
             }
-        
         }
     }//END getcatpro
+
+
+
 ?>
