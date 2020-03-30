@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2020 at 06:12 PM
+-- Generation Time: Mar 31, 2020 at 01:56 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecom_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `p_id` int(10) NOT NULL,
+  `ip_add` varchar(255) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `size` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
+(2, '::1', 4, 'Small'),
+(8, '::1', 2, 'Medium');
 
 -- --------------------------------------------------------
 
@@ -133,6 +154,12 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`p_id`);
 
 --
 -- Indexes for table `categories`

@@ -91,30 +91,34 @@
                         <div class="box">
                             <h1 class="text-center"> <?php echo $pro_title; ?>  </h1>
 
-                            <form action="index.php?add_cart= <?php echo $pro_id; ?>" class="form-horizontal" method="post">
+                            <?php add_cart(); ?>
+
+                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post">
 
                                 <div class="form-group">
                                     <label for="" class="col-md-5 control-label">Product Quantity</label>
                                         <div class="col-md-7">
-                                            <select name="" id="" class="form-control">
-                                                <option value="">1</option>
-                                                <option value="">2</option>
-                                                <option value="">3</option>
-                                                <option value="">4</option>
-                                                <option value="">5</option>
+                                            <select name="product_qty" id="" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
                                             </select> 
                                         </div>
                                 </div><!--form group-->
 
                                 <div class="form-group">
                                     <label for="" class="col-md-5 control-label">Product Size</label>
+
                                     <div class="col-md-7">
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Select size</option>
-                                            <option value="">Small</option>
-                                            <option value="">Medium</option>
-                                            <option value="">Large</option>
+                                        <select name="product_size" class="form-control" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('You must pick a size!')">
+                                            <option disabled selected>Select size</option>
+                                            <option>Small</option>
+                                            <option>Medium</option>
+                                            <option>Large</option>
                                         </select> 
+
                                     </div>
                                 </div><!--form group-->
                                 
@@ -193,7 +197,7 @@
 
                 <?php
                  
-                $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+                $get_products = "select * from products order by rand() DESC LIMIT 0,3"; //rand function is to generate random products that you might like
                 $run_products = mysqli_query($con, $get_products);
 
                     while($row_products = mysqli_fetch_array($run_products)){
