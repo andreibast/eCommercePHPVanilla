@@ -63,7 +63,7 @@
             ----------------------------------------------------->
             <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
                 <a href="#" class="btn btn-success btn-sm">Welcome</a>
-                <a href="checkout.php">4 Items In Your Cart | Total Price: $300 </a>
+                <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
             </div><!-- col-md-6 offer Finish -->
            
             <!----------------------------------------------------
@@ -157,7 +157,7 @@
                 -------------------------------------------------------------------------------------------->   
                 <a href="cart.php" class="btn navbar-btn btn-primary right"> <!--btn navbar-btn btn-primary right Begin-->
                     <i class="fa fa-shopping-cart"></i>
-                    <span>4 Items in your cart</span>
+                    <span><?php items(); ?> Items in your cart</span>
                 </a><!--btn navbar-btn btn-primary right Finish-->
                 
                 <div class="navbar-collapse collapse right"> <!--navbar-collapse collapse right Begin-->

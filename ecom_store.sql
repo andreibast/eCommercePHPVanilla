@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2020 at 01:56 AM
+-- Generation Time: Apr 07, 2020 at 10:57 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -40,8 +40,11 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
+(1, '127.0.0.1', 3, 'Medium'),
 (2, '::1', 4, 'Small'),
-(8, '::1', 2, 'Medium');
+(8, '::1', 2, 'Medium'),
+(15, '127.0.0.1', 1, 'Medium'),
+(16, '127.0.0.1', 1, 'Medium');
 
 -- --------------------------------------------------------
 
