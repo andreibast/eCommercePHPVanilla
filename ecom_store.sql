@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2020 at 10:57 PM
+-- Generation Time: Apr 09, 2020 at 04:33 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -40,11 +40,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
-(1, '127.0.0.1', 3, 'Medium'),
-(2, '::1', 4, 'Small'),
-(8, '::1', 2, 'Medium'),
-(15, '127.0.0.1', 1, 'Medium'),
-(16, '127.0.0.1', 1, 'Medium');
+(7, '127.0.0.1', 1, 'Large'),
+(11, '127.0.0.1', 1, 'Small'),
+(15, '127.0.0.1', 1, 'Medium');
 
 -- --------------------------------------------------------
 
@@ -67,6 +65,32 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 (2, 'Women', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (3, 'Kids', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (4, 'Other', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `customer_id` int(10) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `customer_pass` varchar(255) NOT NULL,
+  `customer_country` text NOT NULL,
+  `customer_city` text NOT NULL,
+  `customer_contact` varchar(255) NOT NULL,
+  `customer_address` text NOT NULL,
+  `customer_image` text NOT NULL,
+  `customer_ip` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
+(5, 'Test', 'testingmail@yahoo.uk', 'blabla', 'Blabla', 'Blabla2', '1251235341', 'Blabla', 'waxed-cotton-coat-woman-2.jpg', '::1');
 
 -- --------------------------------------------------------
 
@@ -171,6 +195,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -197,6 +227,12 @@ ALTER TABLE `slider`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`

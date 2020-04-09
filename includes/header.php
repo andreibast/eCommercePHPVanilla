@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include("includes/db.php");
     include("functions/functions.php");
 ?>
@@ -62,7 +64,17 @@
             1.1.Top bar: LEFT side
             ----------------------------------------------------->
             <div class="col-md-6 offer"><!-- col-md-6 offer Begin -->
-                <a href="#" class="btn btn-success btn-sm">Welcome</a>
+                <a href="#" class="btn btn-success btn-sm">
+                
+                <?php
+                if(isset($_SESSION['customer_email'])){
+                    echo "Welcome: Guest";
+                }else{
+                    echo "Welcome: " . $_SESSION['customer_email'] . "";
+                }
+                ?>
+                
+                </a>
                 <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
             </div><!-- col-md-6 offer Finish -->
            
@@ -81,7 +93,20 @@
                         <a href="cart.php">Go To Cart</a>
                     </li>
                     <li>
-                        <a href="checkout.php">Login</a>
+                        <a href="checkout.php">
+                        
+                        <?php
+
+                            if(isset($_SESSION['customer_email'])){
+                                echo "<a href='checkout.php'> Login </a>";
+                            }else{
+                                echo "<a href='logout.php'> Log Out </a>";
+                            }
+                        
+                        ?>
+                        
+                        
+                        </a>
                     </li>
                 </ul><!-- menu Finish -->
             </div><!-- col-md-6 Finish -->
