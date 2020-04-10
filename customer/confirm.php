@@ -9,6 +9,12 @@ if(!isset($_SESSION['customer_email'])){
 include("includes/db.php");
 include("functions/functions.php");
 
+
+if(isset($_GET['order_id'])){
+    $order_id = $_GET['order_id'];
+
+}
+
 ?>
 
 
@@ -149,7 +155,7 @@ include("functions/functions.php");
                    
                </div><!-- padding-nav Finish -->
                
-               <a href="cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+               <a href="../cart.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                    
                    <i class="fa fa-shopping-cart"></i>
                    
@@ -199,13 +205,6 @@ include("functions/functions.php");
        
    </div><!-- navbar navbar-default Finish -->
 
-
-
-
-
-
-
-
    <!----------------------------------------------------
     3.QUICK NAVIGATION LINKS
     ----------------------------------------------------->   
@@ -223,11 +222,6 @@ include("functions/functions.php");
                 </ul><!--breadcrumb-->
             </div><!--col md 12-->
 
-
-
-
-
-
    <!----------------------------------------------------
     4.SECTION CONTENTS
     ----------------------------------------------------->   
@@ -242,7 +236,7 @@ include("functions/functions.php");
                     <div class="box">
 
                         <h1 align="center"> Please confirm your payment: </h1>
-                        <form action="confirm.php" method="post" enctype="multipart/form-data">
+                        <form action="confirm.php?update='<?php echo $order_id; ?>'" method="post" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label> Invoice No: </label>
