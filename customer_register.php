@@ -24,7 +24,7 @@
    
    <?php 
     
-    include("includes/sidebar.php");
+        include("includes/sidebar.php");
     
     ?>
                

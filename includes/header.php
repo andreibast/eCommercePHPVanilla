@@ -162,20 +162,32 @@ if(isset($_GET['pro_id'])){
                    
                    <ul class="nav navbar-nav left"><!-- nav navbar-nav left Begin -->
                        
-                       <li>
-                           <a href="../index.php">Home</a>
+                       <li class="<?php if($active=='Home') echo "active"; ?>">
+                           <a href="index.php">Home</a>
                        </li>
-                       <li>
-                           <a href="../shop.php">Shop</a>
+                       <li class="<?php if($active=='Shop') echo "active"; ?>">
+                           <a href="shop.php">Shop</a>
                        </li>
-                       <li class="active">
-                           <a href="my_account.php">My Account</a>
+                       <li class="<?php if($active=='Account') echo "active"; ?>">
+
+                        <?php
+                               if(!isset($_SESSION['customer_email'])){
+                                echo "<a href='checkout.php'> My Account </a>";
+
+                               }else{
+                                echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
+                               }
+                        ?>
+                        
+
+
+
                        </li>
-                       <li>
-                           <a href="../cart.php">Shopping Cart</a>
+                       <li class="<?php if($active=='Cart') echo "active"; ?>">
+                           <a href="cart.php">Shopping Cart</a>
                        </li>
-                       <li>
-                           <a href="../contact.php">Contact Us</a>
+                       <li class="<?php if($active=='Contact') echo "active"; ?>">
+                           <a href="contact.php">Contact Us</a>
                        </li>
                        
                    </ul><!-- nav navbar-nav left Finish -->
