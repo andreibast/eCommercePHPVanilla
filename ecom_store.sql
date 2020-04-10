@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2020 at 05:13 AM
+-- Generation Time: Apr 10, 2020 at 07:35 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -42,6 +42,7 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
 (7, '127.0.0.1', 1, 'Large'),
 (11, '127.0.0.1', 1, 'Small'),
+(13, '::1', 1, 'Small'),
 (15, '127.0.0.1', 1, 'Medium');
 
 -- --------------------------------------------------------
@@ -90,8 +91,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(5, 'Test', 'testingmail@yahoo.uk', 'blabla', 'Blabla', 'Blabla2', '1251235341', 'Blabla', 'waxed-cotton-coat-woman-2.jpg', '::1'),
-(6, 'vgsdbgsgbv', 'gvrsbgsrg', 'vsgrbrdsvr', 'sgsdgd', 'sdgsdgs', 'sdgsg', 'sdgdgsg', 'g-polos-tshirt-1.jpg', '::1');
+(5, 'Test', 'testingmail@yahoo.uk', 'blabla', 'Blabla', 'Blabla2', '1251235341', 'Blabla', 'Perfect_male_face.jpg', '::1'),
+(6, 'vgsdbgsgbv', 'yep@yepyep.com', 'blabla', 'sgsdgd', 'sdgsdgs', 'sdgsg', 'sdgdgsg', 'g-polos-tshirt-1.jpg', '::1');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,10 @@ CREATE TABLE `customer_orders` (
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
 (1, 5, 240, 799567956, 4, 'Small', '2020-04-10', 'pending'),
-(2, 5, 225, 1049213841, 1, 'Small', '2020-04-10', 'pending');
+(2, 5, 225, 1049213841, 1, 'Small', '2020-04-10', 'pending'),
+(3, 6, 121, 534722850, 1, 'Small', '2020-04-10', 'pending'),
+(4, 6, 105, 534722850, 3, 'Medium', '2020-04-10', 'pending'),
+(5, 6, 450, 534722850, 2, 'Medium', '2020-04-10', 'pending');
 
 -- --------------------------------------------------------
 
@@ -140,7 +144,10 @@ CREATE TABLE `pending_orders` (
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
 (1, 5, 799567956, '16', 4, 'Small', 'pending'),
-(2, 5, 1049213841, '14', 1, 'Small', 'pending');
+(2, 5, 1049213841, '14', 1, 'Small', 'pending'),
+(3, 6, 534722850, '2', 1, 'Small', 'pending'),
+(4, 6, 534722850, '9', 3, 'Medium', 'pending'),
+(5, 6, 534722850, '14', 2, 'Medium', 'pending');
 
 -- --------------------------------------------------------
 
@@ -300,13 +307,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
