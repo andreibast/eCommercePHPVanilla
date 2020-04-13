@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2020 at 09:08 AM
+-- Generation Time: Apr 13, 2020 at 10:22 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -90,8 +90,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(5, 'Test', 'testingmail@yahoo.uk', 'blabla', 'Blabla', 'Blabla2', '1251235341', 'Blabla', 'Perfect_male_face.jpg', '::1'),
-(6, 'vgsdbgsgbv', 'yep@yepyep.com', 'blabla', 'sgsdgd', 'sdgsdgs', 'sdgsg', 'sdgdgsg', 'g-polos-tshirt-1.jpg', '::1');
+(5, 'Test2', 'testingmail@yahoo.uk', '12345', 'Blabla', 'Blabla2', '1251235341', 'Blabla', '', '::1');
 
 -- --------------------------------------------------------
 
@@ -115,12 +114,31 @@ CREATE TABLE `customer_orders` (
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
-(1, 5, 240, 799567956, 4, 'Small', '2020-04-10', 'pending'),
-(2, 5, 225, 1049213841, 1, 'Small', '2020-04-10', 'pending'),
-(3, 6, 121, 534722850, 1, 'Small', '2020-04-10', 'pending'),
-(4, 6, 105, 534722850, 3, 'Medium', '2020-04-10', 'pending'),
-(5, 6, 450, 534722850, 2, 'Medium', '2020-04-10', 'pending'),
-(6, 5, 79, 1860678451, 1, 'Small', '2020-04-10', 'pending');
+(1, 5, 121, 2024194379, 1, 'Large', '2020-04-12', 'Complete'),
+(2, 5, 445, 2024194379, 1, 'Medium', '2020-04-12', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `payment_id` int(10) NOT NULL,
+  `invoice_no` int(10) NOT NULL,
+  `amount` int(10) NOT NULL,
+  `payment_mode` text NOT NULL,
+  `ref_no` int(10) NOT NULL,
+  `code` int(10) NOT NULL,
+  `payment_date` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
+(1, 2024194379, 0, 'Western Union', 434, 34, '43t34tg3434');
 
 -- --------------------------------------------------------
 
@@ -143,12 +161,8 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(1, 5, 799567956, '16', 4, 'Small', 'pending'),
-(2, 5, 1049213841, '14', 1, 'Small', 'pending'),
-(3, 6, 534722850, '2', 1, 'Small', 'pending'),
-(4, 6, 534722850, '9', 3, 'Medium', 'pending'),
-(5, 6, 534722850, '14', 2, 'Medium', 'pending'),
-(6, 5, 1860678451, '10', 1, 'Small', 'pending');
+(1, 5, 2024194379, '2', 1, 'Large', 'Complete'),
+(2, 5, 2024194379, '13', 1, 'Medium', 'pending');
 
 -- --------------------------------------------------------
 
@@ -265,6 +279,12 @@ ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`payment_id`);
+
+--
 -- Indexes for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
@@ -308,13 +328,19 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`

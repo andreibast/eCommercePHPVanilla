@@ -3,21 +3,21 @@
 session_start();
 
 if(!isset($_SESSION['customer_email'])){
-    echo "<script>window.open('../checkout.php', '_self')</script>";
+    
+    echo "<script>window.open('../checkout.php','_self')</script>";
+    
 }else{
 
 include("includes/db.php");
 include("functions/functions.php");
-
-
+    
 if(isset($_GET['order_id'])){
+    
     $order_id = $_GET['order_id'];
-
+    
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,131 +182,184 @@ if(isset($_GET['order_id'])){
                        <div class="input-group"><!-- input-group Begin -->
                            
                            <input type="text" class="form-control" placeholder="Search" name="user_query" required>
-                           
                            <span class="input-group-btn"><!-- input-group-btn Begin -->
-                           
                            <button type="submit" name="search" value="Search" class="btn btn-primary"><!-- btn btn-primary Begin -->
                                
                                <i class="fa fa-search"></i>
                                
                            </button><!-- btn btn-primary Finish -->
-                           
                            </span><!-- input-group-btn Finish -->
                            
                        </div><!-- input-group Finish -->
-                       
                    </form><!-- navbar-form Finish -->
-                   
+
                </div><!-- collapse clearfix Finish -->
-               
            </div><!-- navbar-collapse collapse Finish -->
+       </div><!-- container Finish -->
+   </div><!-- navbar navbar-default Finish -->
+   
+   <div id="content"><!-- #content Begin -->
+       <div class="container"><!-- container Begin -->
+           <div class="col-md-12"><!-- col-md-12 Begin -->
+               
+               <ul class="breadcrumb"><!-- breadcrumb Begin -->
+                   <li>
+                       <a href="index.php">Home</a>
+                   </li>
+                   <li>
+                       My Account
+                   </li>
+               </ul><!-- breadcrumb Finish -->
+               
+           </div><!-- col-md-12 Finish -->
+           
+           <div class="col-md-3"><!-- col-md-3 Begin -->
+   
+   <?php 
+    
+    include("includes/sidebar.php");
+    
+    ?>
+               
+           </div><!-- col-md-3 Finish -->
+           
+           <div class="col-md-9"><!-- col-md-9 Begin -->
+               
+               <div class="box"><!-- box Begin -->
+                   
+                   <h1 align="center"> Please confirm your payment</h1>
+                   
+                   <form action="confirm.php?update_id=<?php echo $order_id;  ?>" method="post" enctype="multipart/form-data"><!-- form Begin -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Invoice No: </label>
+                          
+                          <input type="text" class="form-control" name="invoice_no" required>
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Amount Sent: </label>
+                          
+                          <input type="text" class="form-control" name="amount_sent" required>
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Select Payment Mode: </label>
+                          
+                          <select name="payment_mode" class="form-control"><!-- form-control Begin -->
+                              
+                              <option> Select Payment Mode </option>
+                              <option> Back Code </option>
+                              <option> Paypal </option>
+                              <option> Payoneer </option>
+                              <option> Western Union </option>
+                              
+                          </select><!-- form-control Finish -->
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Transaction / Reference ID: </label>
+                          
+                          <input type="text" class="form-control" name="ref_no" required>
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Paypal / Payoneer / Western Union Code: </label>
+                          
+                          <input type="text" class="form-control" name="code" required>
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="form-group"><!-- form-group Begin -->
+                           
+                         <label> Payment Date: </label>
+                          
+                          <input type="text" class="form-control" name="date" required>
+                           
+                       </div><!-- form-group Finish -->
+                       
+                       <div class="text-center"><!-- text-center Begin -->
+                           
+                           <button class="btn btn-primary btn-lg" name="confirm_payment"><!-- tn btn-primary btn-lg Begin -->
+                               
+                               <i class="fa fa-user-md"></i> Confirm Payment
+                               
+                           </button><!-- tn btn-primary btn-lg Finish -->
+                           
+                       </div><!-- text-center Finish -->
+                       
+                   </form><!-- form Finish -->
+                   
+                   <?php 
+                   
+                    if(isset($_POST['confirm_payment'])){
+                        
+                        $update_id = $_GET['update_id'];
+                        
+                        $invoice_no = $_POST['invoice_no'];
+                        
+                        $amount = $_POST['amount_sent'];
+                        
+                        $payment_mode = $_POST['payment_mode'];
+                        
+                        $ref_no = $_POST['ref_no'];
+                        
+                        $code = $_POST['code'];
+                        
+                        $payment_date = $_POST['date'];
+                        
+                        $complete = "Complete";
+                        
+                        $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date')";
+                        
+                        $run_payment = mysqli_query($con,$insert_payment);
+                        
+                        $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
+                        
+                        $run_customer_order = mysqli_query($con,$update_customer_order);
+                        
+                        $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
+                        
+                        $run_pending_order = mysqli_query($con,$update_pending_order);
+                        
+                        if($run_pending_order){
+                            
+                            echo "<script>alert('Thank You for purchasing, your orders will be completed within 24 hours work')</script>";
+                            
+                            echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+                            
+                        }
+                        
+                    }
+                   
+                   ?>
+                   
+               </div><!-- box Finish -->
+               
+           </div><!-- col-md-9 Finish -->
            
        </div><!-- container Finish -->
-       
-   </div><!-- navbar navbar-default Finish -->
-
-   <!----------------------------------------------------
-    3.QUICK NAVIGATION LINKS
-    ----------------------------------------------------->   
-    <div id="content">
-        <div class="container">
-
-            <div class="col-md-12">
-                <ul class="breadcrumb">
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        My Account
-                    </li>
-                </ul><!--breadcrumb-->
-            </div><!--col md 12-->
-
-   <!----------------------------------------------------
-    4.SECTION CONTENTS
-    ----------------------------------------------------->   
-            <div class="col-md-3">
-                <?php
-                    include("includes/sidebar.php");
-                ?>
-            </div>
-
-
-                <div class="col-md-9">
-                    <div class="box">
-
-                        <h1 align="center"> Please confirm your payment: </h1>
-                        <form action="confirm.php?update='<?php echo $order_id; ?>'" method="post" enctype="multipart/form-data">
-
-                            <div class="form-group">
-                                <label> Invoice No: </label>
-                                <input type="text" class= "form-control" name="invoice_no" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Amount Sent: </label>
-                                <input type="text" class= "form-control" name="amount_sent" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Select payment mode: </label>
-                                <select name="payment-mode" class="form-control">
-                                    <option value=""> Select payment mode </option>
-                                    <option value=""> Back Code </option>
-                                    <option value=""> UBL/Omni Paisa </option>
-                                    <option value=""> Easy Paisa </option>
-                                    <option value=""> Western Union </option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Transaction / Reference ID: </label>
-                                <input type="text" class= "form-control" name="ref_no" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Omni Paisa / East Paisa: </label>
-                                <input type="text" class= "form-control" name="code" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label> Payment Date: </label>
-                                <input type="text" class= "form-control" name="date" required>
-                            </div>
-
-
-                            <div class="text-center">
-                                <button class="btn btn-primary btn-lg">
-                                    <i class="fa fa-user-md"></i> Confirm Payment
-                                </button>
-                            </div>
-                        </form>
-                    
-                    </div>
-                </div>
-
-            </div>
-    </div>
-
-    <!-------------------
-    COPY FROM INDEX.PHP
-    ----------------------->
-    <?php
-        include("../includes/footer.php");
+   </div><!-- #content Finish -->
+   
+   <?php 
+    
+    include("includes/footer.php");
+    
     ?>
-
-    <!----------------------------------------------------
-    -----------ADDING JQUERY AND BOOTSTRAP----------------
-    ----------------------------------------------------->
+    
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
-<!----------------------------------------------------
------------------------END----------------------------
------------------------------------------------------>
+    
+    
 </body>
 </html>
-
-
-<?php
-    }
-    ?>
+<?php } ?>
