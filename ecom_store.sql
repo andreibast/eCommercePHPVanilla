@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2020 at 06:08 PM
+-- Generation Time: Apr 24, 2020 at 08:09 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -91,7 +91,8 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 (1, 'Men', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (2, 'Women', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (3, 'Kids', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(4, 'Other', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.');
+(4, 'Other', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
+(5, 'Oldies', 'Lorem Ipsum');
 
 -- --------------------------------------------------------
 
@@ -271,10 +272,9 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
-(1, 'Slide number 1', 'slide-1.jpg'),
-(2, 'Slide number 2', 'slide-2.jpg'),
-(3, 'Slide number 3', 'slide-3.jpg'),
-(4, 'Slide number 4', 'slide-4.jpg');
+(6, 'Slide5', 'slide-5.jpg'),
+(7, 'Slide7', 'slide-7.jpg'),
+(8, 'Slide8', 'slide-8.jpg');
 
 --
 -- Indexes for dumped tables
@@ -354,7 +354,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -396,7 +396,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
