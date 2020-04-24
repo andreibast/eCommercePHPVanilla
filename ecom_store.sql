@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2020 at 01:51 PM
+-- Generation Time: Apr 24, 2020 at 06:08 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -45,7 +45,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
-(1, 'Andrei', 'andrei.bast@gmail.com', 'AdminPanelPass2020', 'm-dev-info.jpg', 'Romania', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', 'N.A.', 'Creator');
+(1, 'Admin_Andrei', 'andrei.bast@gmail.com', 'AdminPanelPass2020', 'm-dev-info.jpg', 'Romania', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', 'N.A.', 'Creator'),
+(2, 'Chelsea', 'chelsea@gmail.com', '123456', 'ci.jpg', 'Belgium', 'About Chelsea: Lorem Ipsu', '15255125125', 'Actress');
 
 -- --------------------------------------------------------
 
@@ -67,6 +68,7 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
 (7, '127.0.0.1', 1, 'Large'),
 (11, '127.0.0.1', 1, 'Small'),
+(14, '::1', 4, 'Small'),
 (15, '127.0.0.1', 1, 'Medium');
 
 -- --------------------------------------------------------
@@ -227,8 +229,7 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 (12, 4, 2, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
 (13, 1, 1, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
 (14, 1, 1, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
-(15, 1, 2, '2020-03-30 15:33:55', 'Mobile Power Jacket', 'Mobile-Power-Jacket.jpg', 'Mobile-Power-Jacket-2.jpg', 'Mobile-Power-Jacket-3.jpg', 180, 'Women Jacket', '<p>Lorem Ipsum</p>'),
-(16, 5, 1, '2020-03-30 15:39:08', 'Polos T-Shirt', 'polos-tshirt-1.jpg', 'polos-tshirt-2.jpg', '', 60, 'T-Shirt', '<p>Lorem Ipsum</p>');
+(15, 5, 3, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>');
 
 -- --------------------------------------------------------
 
@@ -247,7 +248,7 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUES
-(1, 'Jackets', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
+(1, ' Jackets ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '),
 (2, 'Accessories', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (3, 'Shoes', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
 (4, 'Coats', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
@@ -347,7 +348,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
