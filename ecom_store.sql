@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2020 at 08:40 PM
+-- Generation Time: Apr 24, 2020 at 10:59 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -45,8 +45,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
-(1, 'Admin_Andrei', 'andrei.bast@gmail.com', 'AdminPanelPass2020', 'm-dev-info.jpg', 'Romania', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', 'N.A.', 'Creator'),
-(2, 'Chelsea', 'chelsea@gmail.com', '123456', 'ci.jpg', 'Belgium', 'About Chelsea: Lorem Ipsu', '15255125125', 'Actress');
+(1, 'Admin.Andrei', 'andrei.bast@gmail.com', 'AdminPanelPass2020', 'iko.png', 'Romania', ' This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', 'N.A.', 'Creator'),
+(3, 'The new admin', '123', '123', 'Nozomi_Sasaki-.jpg', 'wgvwe', 'gwgweg', 'wefwef', 'wefwef');
 
 -- --------------------------------------------------------
 
@@ -68,6 +68,7 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
 (7, '127.0.0.1', 1, 'Large'),
 (11, '127.0.0.1', 1, 'Small'),
+(14, '::1', 1, 'Small'),
 (15, '127.0.0.1', 1, 'Medium');
 
 -- --------------------------------------------------------
@@ -167,8 +168,7 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
-(1, 2024194379, 0, 'Western Union', 434, 34, '43t34tg3434'),
-(2, 2024194379, 445, 'Paypal', 0, 0, 'sdfdsfsdf');
+(1, 2024194379, 0, 'Western Union', 434, 34, '43t34tg3434');
 
 -- --------------------------------------------------------
 
@@ -350,7 +350,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
