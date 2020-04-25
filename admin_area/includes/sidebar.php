@@ -57,7 +57,7 @@
                 <li><!-- li begin -->
                     <a href="index.php?view_customers"><!-- a href begin -->
                         
-                        <i class="fa fa-fw fa-users"></i> Customeres
+                        <i class="fa fa-fw fa-users"></i> Customers
                         
                         <span class="badge"><?php echo $count_customers; ?></span>
                         
@@ -176,6 +176,25 @@
                 </ul><!-- collapse finish -->
                 
             </li><!-- li finish -->
+
+                        
+            <li><!-- li begin -->
+                <a href="#" data-toggle="collapse" data-target="#boxes"><!-- a href begin -->
+                        <i class="fa fa-fw fa-dropbox"></i> Boxes
+                        <i class="fa fa-fw fa-caret-down"></i>
+                </a><!-- a href finish -->
+                
+                <ul id="boxes" class="collapse"><!-- collapse begin -->
+                    <li><!-- li begin -->
+                        <a href="index.php?insert_box"> Insert Box </a>
+                    </li><!-- li finish -->
+                    <li><!-- li begin -->
+                        <a href="index.php?view_boxes"> View Boxes </a>
+                    </li><!-- li finish -->
+                </ul><!-- collapse finish -->
+                
+            </li><!-- li finish -->
+            
             
             <li><!-- li begin -->
                 <a href="index.php?view_customers"><!-- a href begin -->

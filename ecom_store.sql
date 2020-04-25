@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 12:26 PM
+-- Generation Time: Apr 25, 2020 at 01:27 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -47,6 +47,27 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
 (1, 'Admin.Andrei', 'andrei.bast@gmail.com', 'AdminPanelPass2020', 'iko.png', 'Romania', ' This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', 'N.A.', 'Creator'),
 (3, 'The new admin', '123', '123', 'Nozomi_Sasaki-.jpg', 'wgvwe', 'gwgweg', 'wefwef', 'wefwef');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `boxes_section`
+--
+
+CREATE TABLE `boxes_section` (
+  `box_id` int(10) NOT NULL,
+  `box_title` text NOT NULL,
+  `box_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `boxes_section`
+--
+
+INSERT INTO `boxes_section` (`box_id`, `box_title`, `box_desc`) VALUES
+(1, 'Best Products', 'Lorem Ipsum'),
+(2, '  100% Satisfy2  ', 'Lorem Ipsum2'),
+(3, 'Best Offers', 'Lorem Ipsum');
 
 -- --------------------------------------------------------
 
@@ -291,6 +312,12 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `boxes_section`
+--
+ALTER TABLE `boxes_section`
+  ADD PRIMARY KEY (`box_id`);
+
+--
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
@@ -353,6 +380,12 @@ ALTER TABLE `slider`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `boxes_section`
+--
+ALTER TABLE `boxes_section`
+  MODIFY `box_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
