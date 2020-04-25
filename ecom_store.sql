@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2020 at 10:59 PM
+-- Generation Time: Apr 25, 2020 at 12:26 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -266,17 +266,19 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUE
 CREATE TABLE `slider` (
   `slide_id` int(10) NOT NULL,
   `slide_name` varchar(255) NOT NULL,
-  `slide_image` text NOT NULL
+  `slide_image` text NOT NULL,
+  `slide_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `slider`
 --
 
-INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
-(6, 'Slide5', 'slide-5.jpg'),
-(7, 'Slide7', 'slide-7.jpg'),
-(8, 'Slide8', 'slide-8.jpg');
+INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
+(6, 'Slide5', 'slide-5.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/index.php'),
+(7, 'Slide7', 'slide-7.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/shop.php'),
+(8, 'Slide8', 'slide-8.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/contact.php'),
+(9, 'Slide9', 'slider-number-9.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/customer_register.php');
 
 --
 -- Indexes for dumped tables
@@ -398,7 +400,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
