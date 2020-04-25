@@ -111,22 +111,15 @@
 
           if(isset($_POST['update_box'])){
               
-              $box_title = $_POST['box_title'];
-              
+              $box_title = $_POST['box_title']; 
               $box_desc = $_POST['box_desc'];
-              
               $update_box = "update boxes_section set box_title='$box_title',box_desc='$box_desc' where box_id='$box_id'";
-              
               $run_box = mysqli_query($con,$update_box);
               
               if($run_box){
-                  
                   echo "<script>alert('Your Box Has Been Updated')</script>";
-                  
                   echo "<script>window.open('index.php?view_boxes','_self')</script>";
-                  
               }
-              
           }
 
 ?>

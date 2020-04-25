@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 01:27 PM
+-- Generation Time: Apr 25, 2020 at 05:21 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -301,6 +301,28 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALU
 (8, 'Slide8', 'slide-8.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/contact.php'),
 (9, 'Slide9', 'slider-number-9.jpg', 'http://localhost/M-Dev-Store/eCommercePHPVanilla/customer_register.php');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `terms`
+--
+
+CREATE TABLE `terms` (
+  `term_id` int(10) NOT NULL,
+  `term_title` varchar(100) NOT NULL,
+  `term_link` varchar(100) NOT NULL,
+  `term_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `terms`
+--
+
+INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
+(1, 'Terms & Conditions', 'termLink', 'Lorem Ipsum'),
+(2, 'Refund Policy', 'RefundLink', 'LoremIpsum'),
+(4, 'Rules & Privacy2', 'rules_privacy', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\r\n<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>');
+
 --
 -- Indexes for dumped tables
 --
@@ -372,6 +394,12 @@ ALTER TABLE `slider`
   ADD PRIMARY KEY (`slide_id`);
 
 --
+-- Indexes for table `terms`
+--
+ALTER TABLE `terms`
+  ADD PRIMARY KEY (`term_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -434,6 +462,12 @@ ALTER TABLE `product_categories`
 --
 ALTER TABLE `slider`
   MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `terms`
+--
+ALTER TABLE `terms`
+  MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

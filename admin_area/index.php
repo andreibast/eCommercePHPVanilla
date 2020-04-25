@@ -141,9 +141,6 @@
                         include("edit_box.php");
                     }
 
-
-
-
                     if(isset($_GET['view_customers'])){
                         include("view_customers.php");
                     }
@@ -182,6 +179,23 @@
 
                     if(isset($_GET['insert_user'])){
                         include("insert_user.php");
+                    }
+
+
+                    if(isset($_GET['insert_terms'])){
+                        include("insert_terms.php");
+                    }
+
+                    if(isset($_GET['view_terms'])){
+                        include("view_terms.php");
+                    }
+
+                    if(isset($_GET['delete_term'])){
+                        include("delete_term.php");
+                    }
+
+                    if(isset($_GET['edit_term'])){
+                        include("edit_term.php");
                     }
 
 
