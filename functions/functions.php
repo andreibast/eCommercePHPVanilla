@@ -93,42 +93,42 @@
     } //END getPro
 
 
-    function getPCats(){
-        global $db;
+    // function getPCats(){
+    //     global $db;
 
-        $get_p_cats = "select * from product_categories";
-        $run_p_cats = mysqli_query($db, $get_p_cats);
+    //     $get_p_cats = "select * from product_categories";
+    //     $run_p_cats = mysqli_query($db, $get_p_cats);
 
-        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
-            $p_cat_id = $row_p_cats['p_cat_id'];
-            $p_cat_title = $row_p_cats['p_cat_title'];
+    //     while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+    //         $p_cat_id = $row_p_cats['p_cat_id'];
+    //         $p_cat_title = $row_p_cats['p_cat_title'];
             
-            echo "
-                <li>
-                    <a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a>
-                </li>
-            ";
-        }
-    } //END getPCats
+    //         echo "
+    //             <li>
+    //                 <a href='shop.php?p_cat=$p_cat_id'> $p_cat_title </a>
+    //             </li>
+    //         ";
+    //     }
+    // } //END getPCats
 
-    function getCats(){
-        global $db;
+    // function getCats(){
+    //     global $db;
 
-        $get_cats = "select * from categories";
+    //     $get_cats = "select * from categories";
 
-        $run_cats = mysqli_query($db, $get_cats);
+    //     $run_cats = mysqli_query($db, $get_cats);
 
-        while($row_cats=mysqli_fetch_array($run_cats)){
-            $cat_id = $row_cats['cat_id'];
-            $cat_title = $row_cats['cat_title'];
+    //     while($row_cats=mysqli_fetch_array($run_cats)){
+    //         $cat_id = $row_cats['cat_id'];
+    //         $cat_title = $row_cats['cat_title'];
             
-            echo "
-                <li>
-                    <a href='shop.php?cat=$cat_id'> $cat_title </a>
-                </li>
-            ";
-        }
-    } //END getCats
+    //         echo "
+    //             <li>
+    //                 <a href='shop.php?cat=$cat_id'> $cat_title </a>
+    //             </li>
+    //         ";
+    //     }
+    // } //END getCats
 
 
     function getpcatpro(){

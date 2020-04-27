@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2020 at 05:21 PM
+-- Generation Time: Apr 27, 2020 at 05:25 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -101,19 +101,19 @@ INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
 CREATE TABLE `categories` (
   `cat_id` int(10) NOT NULL,
   `cat_title` text NOT NULL,
-  `cat_desc` text NOT NULL
+  `cat_top` text NOT NULL,
+  `cat_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
-(1, 'Men', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(2, 'Women', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(3, 'Kids', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(4, 'Other', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(5, 'Oldies', 'Lorem Ipsum');
+INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
+(1, 'Men', 'yes', 'men.jpg'),
+(2, 'Women', 'no', 'women.jpg'),
+(3, 'Kids', 'no', 'kids.jpg'),
+(4, 'Other', 'yes', 'others.jpg');
 
 -- --------------------------------------------------------
 
@@ -167,6 +167,30 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 (2, 5, 445, 2024194379, 1, 'Medium', '2020-04-12', 'Complete'),
 (3, 5, 135, 908682071, 1, 'Medium', '2020-04-24', 'pending'),
 (4, 5, 900, 908682071, 4, 'Small', '2020-04-24', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manufacturers`
+--
+
+CREATE TABLE `manufacturers` (
+  `manufacturer_id` int(10) NOT NULL,
+  `manufacturer_title` text NOT NULL,
+  `manufacturer_top` text NOT NULL,
+  `manufacturer_image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manufacturers`
+--
+
+INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
+(1, 'Name_1', 'yes', 'man_1.jpg'),
+(2, 'Name_2', 'no', 'man_2.jpg'),
+(3, 'Name_3', 'no', 'man_3.jpg'),
+(4, 'Name_4', 'no', 'man_4.jpg'),
+(5, 'Name_5', 'yes', 'man_5.jpg');
 
 -- --------------------------------------------------------
 
@@ -225,6 +249,7 @@ CREATE TABLE `products` (
   `product_id` int(10) NOT NULL,
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
+  `manufacturer_id` int(10) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_title` text NOT NULL,
   `product_img1` text NOT NULL,
@@ -239,21 +264,21 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
-(1, 2, 2, '2020-03-29 21:25:33', 'Women Diamond Heart Ring', 'women-diamond-heart-ring-1.jpg', 'women-diamond-heart-ring-2.jpg', 'women-diamond-heart-ring-3.jpg', 1565, 'Ring', '<p>Lorem</p>'),
-(2, 4, 3, '2020-03-27 16:54:57', 'Boys Puffer Coat With Detachable Hood', 'boys-Puffer-Coat-With-Detachable-Hood-1.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-2.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-3.jpg', 121, 'Hood', '<p>This is for children, during winter times</p>'),
-(3, 5, 2, '2020-03-27 16:57:54', 'Girl Polos T-Shirt', 'g-polos-tshirt-1.jpg', 'g-polos-tshirt-2.jpg', '', 55, 'Shirt', '<p>Lorem Ipsum</p>'),
-(4, 5, 1, '2020-03-27 17:27:06', 'Grey Man', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 55, 'Shirt', '<p>Lorem</p>'),
-(6, 3, 2, '2020-03-30 02:30:57', 'High Heels Women Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 235, 'Heels', '<p>Lorem Ipsum</p>'),
-(7, 3, 1, '2020-03-30 02:32:35', 'Man Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 185, 'Sneakers', '<p>Lorem ipsum</p>'),
-(8, 1, 1, '2020-03-30 15:40:19', 'Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>'),
-(9, 5, 1, '2020-03-30 02:34:47', 'Man Polo', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 35, 'Shirt', '<p>Lorem Ipsum</p>'),
-(10, 2, 4, '2020-03-30 03:13:02', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 79, 'Belt', '<p>Lorem Ipsum</p>'),
-(11, 4, 2, '2020-03-30 02:36:59', 'Red WinterJacket', 'Red-Winter-jacket-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 120, 'Coat', '<p>Lorem Ipsum</p>'),
-(12, 4, 2, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
-(13, 1, 1, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
-(14, 1, 1, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
-(15, 5, 3, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>');
+INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
+(1, 2, 2, 0, '2020-03-29 21:25:33', 'Women Diamond Heart Ring', 'women-diamond-heart-ring-1.jpg', 'women-diamond-heart-ring-2.jpg', 'women-diamond-heart-ring-3.jpg', 1565, 'Ring', '<p>Lorem</p>'),
+(2, 4, 3, 0, '2020-03-27 16:54:57', 'Boys Puffer Coat With Detachable Hood', 'boys-Puffer-Coat-With-Detachable-Hood-1.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-2.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-3.jpg', 121, 'Hood', '<p>This is for children, during winter times</p>'),
+(3, 5, 2, 0, '2020-03-27 16:57:54', 'Girl Polos T-Shirt', 'g-polos-tshirt-1.jpg', 'g-polos-tshirt-2.jpg', '', 55, 'Shirt', '<p>Lorem Ipsum</p>'),
+(4, 5, 1, 0, '2020-03-27 17:27:06', 'Grey Man', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 55, 'Shirt', '<p>Lorem</p>'),
+(6, 3, 2, 0, '2020-03-30 02:30:57', 'High Heels Women Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 235, 'Heels', '<p>Lorem Ipsum</p>'),
+(7, 3, 1, 0, '2020-03-30 02:32:35', 'Man Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 185, 'Sneakers', '<p>Lorem ipsum</p>'),
+(8, 1, 1, 0, '2020-03-30 15:40:19', 'Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>'),
+(9, 5, 1, 0, '2020-03-30 02:34:47', 'Man Polo', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 35, 'Shirt', '<p>Lorem Ipsum</p>'),
+(10, 2, 4, 0, '2020-03-30 03:13:02', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 79, 'Belt', '<p>Lorem Ipsum</p>'),
+(11, 4, 2, 0, '2020-03-30 02:36:59', 'Red WinterJacket', 'Red-Winter-jacket-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 120, 'Coat', '<p>Lorem Ipsum</p>'),
+(12, 4, 2, 0, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
+(13, 1, 1, 0, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
+(14, 1, 1, 0, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
+(15, 5, 3, 0, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>');
 
 -- --------------------------------------------------------
 
@@ -264,19 +289,20 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 CREATE TABLE `product_categories` (
   `p_cat_id` int(10) NOT NULL,
   `p_cat_title` text NOT NULL,
-  `p_cat_desc` text NOT NULL
+  `p_cat_top` text NOT NULL,
+  `p_cat_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product_categories`
 --
 
-INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUES
-(1, ' Jackets ', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '),
-(2, 'Accessories', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(3, 'Shoes', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(4, 'Coats', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.'),
-(5, 'T-Shirt', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequuntur, est laudantium cumque molestiae, delectus odio quisquam veritatis commodi sed soluta nemo totam distinctio quaerat facilis error ipsa a labore.');
+INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat_image`) VALUES
+(1, ' Jackets ', 'yes', 'jacket.jpg'),
+(2, 'Accessories', 'no', 'acc.jpg'),
+(3, 'Shoes', 'no', 'shoes.jpg'),
+(4, 'Coats', 'yes', 'coat.jpg'),
+(5, 'T-Shirt', 'no', 'tshirt.jpg');
 
 -- --------------------------------------------------------
 
@@ -364,6 +390,12 @@ ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
+-- Indexes for table `manufacturers`
+--
+ALTER TABLE `manufacturers`
+  ADD PRIMARY KEY (`manufacturer_id`);
+
+--
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
@@ -432,6 +464,12 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `customer_orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `manufacturers`
+--
+ALTER TABLE `manufacturers`
+  MODIFY `manufacturer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `payments`
