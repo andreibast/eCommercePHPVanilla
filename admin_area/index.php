@@ -218,6 +218,8 @@
                         include("delete_manufacturer.php");
                     }
 
+                    
+
 
 
                     
