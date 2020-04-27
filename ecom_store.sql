@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2020 at 05:25 PM
+-- Generation Time: Apr 27, 2020 at 08:06 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -186,11 +186,10 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
-(1, 'Name_1', 'yes', 'man_1.jpg'),
-(2, 'Name_2', 'no', 'man_2.jpg'),
-(3, 'Name_3', 'no', 'man_3.jpg'),
-(4, 'Name_4', 'no', 'man_4.jpg'),
-(5, 'Name_5', 'yes', 'man_5.jpg');
+(1, 'Manufacturer1', 'yes', 'man_1.jpg'),
+(2, 'Manufacturer2', 'no', 'man_2.jpg'),
+(3, 'Manufacturer3', 'no', 'man_3.jpg'),
+(5, 'Manufacturer4', 'yes', 'man_5.jpg');
 
 -- --------------------------------------------------------
 
@@ -278,7 +277,8 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `
 (12, 4, 2, 0, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
 (13, 1, 1, 0, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
 (14, 1, 1, 0, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
-(15, 5, 3, 0, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>');
+(15, 5, 3, 0, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>'),
+(17, 1, 2, 1, '2020-04-27 17:31:39', 'New Women Jacket', 'new-jacket-women-1.jpg', 'new-jacket-women-2.jpg', 'new-jacket-women-3.jpg', 68, 'Women Jacket', '<p>Lorem Ipsum</p>');
 
 -- --------------------------------------------------------
 
@@ -487,7 +487,7 @@ ALTER TABLE `pending_orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
