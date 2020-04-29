@@ -7,8 +7,6 @@ include("functions/functions.php");
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +40,9 @@ include("functions/functions.php");
                    }
                    
                    ?>
-               
+                   
                </a>
-               <a href="checkout.php"> <?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
+               <a href="checkout.php"><?php items(); ?> Items In Your Cart | Total Price: <?php total_price(); ?> </a>
                
            </div><!-- col-md-6 offer Finish -->
            
@@ -53,18 +51,18 @@ include("functions/functions.php");
                <ul class="menu"><!-- cmenu Begin -->
                    
                    <li>
-                       <a href="../customer_register.php">Register</a>
+                       <a href="customer_register.php">Register</a>
                    </li>
                    <li>
-                       <a href="my_account.php">My Account</a>
+                       <a href="checkout.php">My Account</a>
                    </li>
                    <li>
-                       <a href="../cart.php">Go To Cart</a>
+                       <a href="cart.php">Go To Cart</a>
                    </li>
                    <li>
-                       <a href="../checkout.php">
-                       
-                        <?php 
+                       <a href="checkout.php">
+                           
+                           <?php 
                            
                            if(!isset($_SESSION['customer_email'])){
                        
@@ -76,8 +74,8 @@ include("functions/functions.php");
 
                                }
                            
-                         ?>
-                       
+                           ?>
+                           
                        </a>
                    </li>
                    
@@ -95,7 +93,7 @@ include("functions/functions.php");
            
            <div class="navbar-header"><!-- navbar-header Begin -->
                
-               <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
+               <a href="index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
                    <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
                    <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
@@ -126,31 +124,33 @@ include("functions/functions.php");
                    
                    <ul class="nav navbar-nav left"><!-- nav navbar-nav left Begin -->
                        
-                       <li class="<?php if($active=='Home') echo "active"; ?>">
+                       <li class="<?php if($active=='Home') echo"active"; ?>">
                            <a href="index.php">Home</a>
                        </li>
-                       <li class="<?php if($active=='Shop') echo "active"; ?>">
+                       <li class="<?php if($active=='Shop') echo"active"; ?>">
                            <a href="shop.php">Shop</a>
                        </li>
-                       <li class="<?php if($active=='Account') echo "active"; ?>">
-
-                        <?php
-                               if(!isset($_SESSION['customer_email'])){
-                                echo "<a href='checkout.php'> My Account </a>";
-
-                               }else{
-                                echo "<a href='customer/my_account.php?my_orders'> My Account </a>";
-                               }
-                        ?>
-                        
-
-
-
+                       <li class="<?php if($active=='Account') echo"active"; ?>">
+                           
+                           <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                               
+                               echo"<a href='checkout.php'>My Account</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='customer/my_account.php?my_orders'>My Account</a>"; 
+                               
+                           }
+                           
+                           ?>
+                           
                        </li>
-                       <li class="<?php if($active=='Cart') echo "active"; ?>">
+                       <li class="<?php if($active=='Cart') echo"active"; ?>">
                            <a href="cart.php">Shopping Cart</a>
                        </li>
-                       <li class="<?php if($active=='Contact') echo "active"; ?>">
+                       <li class="<?php if($active=='Contact') echo"active"; ?>">
                            <a href="contact.php">Contact Us</a>
                        </li>
                        

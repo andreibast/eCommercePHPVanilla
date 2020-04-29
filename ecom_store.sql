@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2020 at 08:06 PM
+-- Generation Time: Apr 29, 2020 at 05:18 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -79,6 +79,7 @@ CREATE TABLE `cart` (
   `p_id` int(10) NOT NULL,
   `ip_add` varchar(255) NOT NULL,
   `qty` int(10) NOT NULL,
+  `p_price` varchar(255) NOT NULL,
   `size` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -86,11 +87,13 @@ CREATE TABLE `cart` (
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
-(7, '127.0.0.1', 1, 'Large'),
-(11, '127.0.0.1', 1, 'Small'),
-(14, '::1', 1, 'Small'),
-(15, '127.0.0.1', 1, 'Medium');
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `p_price`, `size`) VALUES
+(7, '127.0.0.1', 1, '', 'Large'),
+(11, '127.0.0.1', 1, '40', 'Small'),
+(12, '::1', 1, '5', 'Large'),
+(13, '::1', 5, '15', 'Medium'),
+(15, '127.0.0.1', 1, '', 'Medium'),
+(17, '::1', 3, '68', 'Medium');
 
 -- --------------------------------------------------------
 
@@ -256,29 +259,31 @@ CREATE TABLE `products` (
   `product_img3` text NOT NULL,
   `product_price` int(10) NOT NULL,
   `product_keywords` text NOT NULL,
-  `product_desc` text NOT NULL
+  `product_desc` text NOT NULL,
+  `product_label` text NOT NULL,
+  `product_sale` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
-(1, 2, 2, 0, '2020-03-29 21:25:33', 'Women Diamond Heart Ring', 'women-diamond-heart-ring-1.jpg', 'women-diamond-heart-ring-2.jpg', 'women-diamond-heart-ring-3.jpg', 1565, 'Ring', '<p>Lorem</p>'),
-(2, 4, 3, 0, '2020-03-27 16:54:57', 'Boys Puffer Coat With Detachable Hood', 'boys-Puffer-Coat-With-Detachable-Hood-1.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-2.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-3.jpg', 121, 'Hood', '<p>This is for children, during winter times</p>'),
-(3, 5, 2, 0, '2020-03-27 16:57:54', 'Girl Polos T-Shirt', 'g-polos-tshirt-1.jpg', 'g-polos-tshirt-2.jpg', '', 55, 'Shirt', '<p>Lorem Ipsum</p>'),
-(4, 5, 1, 0, '2020-03-27 17:27:06', 'Grey Man', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 55, 'Shirt', '<p>Lorem</p>'),
-(6, 3, 2, 0, '2020-03-30 02:30:57', 'High Heels Women Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 235, 'Heels', '<p>Lorem Ipsum</p>'),
-(7, 3, 1, 0, '2020-03-30 02:32:35', 'Man Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 185, 'Sneakers', '<p>Lorem ipsum</p>'),
-(8, 1, 1, 0, '2020-03-30 15:40:19', 'Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>'),
-(9, 5, 1, 0, '2020-03-30 02:34:47', 'Man Polo', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 35, 'Shirt', '<p>Lorem Ipsum</p>'),
-(10, 2, 4, 0, '2020-03-30 03:13:02', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 79, 'Belt', '<p>Lorem Ipsum</p>'),
-(11, 4, 2, 0, '2020-03-30 02:36:59', 'Red WinterJacket', 'Red-Winter-jacket-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 120, 'Coat', '<p>Lorem Ipsum</p>'),
-(12, 4, 2, 0, '2020-03-30 02:38:22', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>'),
-(13, 1, 1, 0, '2020-03-30 15:31:32', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>'),
-(14, 1, 1, 0, '2020-03-30 15:32:55', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>'),
-(15, 5, 3, 0, '2020-04-24 15:30:25', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>'),
-(17, 1, 2, 1, '2020-04-27 17:31:39', 'New Women Jacket', 'new-jacket-women-1.jpg', 'new-jacket-women-2.jpg', 'new-jacket-women-3.jpg', 68, 'Women Jacket', '<p>Lorem Ipsum</p>');
+INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`, `product_label`, `product_sale`) VALUES
+(1, 2, 2, 3, '2020-04-28 14:47:54', 'Women Diamond Heart Ring', 'women-diamond-heart-ring-1.jpg', 'women-diamond-heart-ring-2.jpg', 'women-diamond-heart-ring-3.jpg', 1565, 'Ring', '<p>Lorem</p>', 'sale', 10),
+(2, 4, 3, 3, '2020-04-28 15:13:56', 'Boys Puffer Coat With Detachable Hood', 'boys-Puffer-Coat-With-Detachable-Hood-1.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-2.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-3.jpg', 121, 'Hood', '<p>This is for children, during winter times</p>', 'sale', 119),
+(3, 5, 2, 2, '2020-04-28 14:48:24', 'Girl Polos T-Shirt', 'g-polos-tshirt-1.jpg', 'g-polos-tshirt-2.jpg', '', 55, 'Shirt', '<p>Lorem Ipsum</p>', 'sale', 10),
+(4, 5, 1, 3, '2020-04-28 14:43:49', 'Grey Man', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 55, 'Shirt', '<p>Lorem</p>', 'sale', 0),
+(6, 3, 2, 2, '2020-04-28 14:44:42', 'High Heels Women Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 235, 'Heels', '<p>Lorem Ipsum</p>', 'sale', 0),
+(7, 3, 1, 4, '2020-04-28 14:48:54', 'Man Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 185, 'Sneakers', '<p>Lorem ipsum</p>', 'sale', 50),
+(8, 1, 1, 3, '2020-04-28 14:49:09', 'Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 135, 'Jacket', '<p>Lorem Ipsum</p>', 'sale', 10),
+(9, 5, 1, 1, '2020-04-28 14:42:51', 'Man Polo', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 35, 'Shirt', '<p>Lorem Ipsum</p>', 'sale', 0),
+(10, 2, 4, 2, '2020-04-28 14:42:48', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 79, 'Belt', '<p>Lorem Ipsum</p>', 'sale', 0),
+(11, 4, 2, 4, '2020-04-28 14:44:00', 'Red WinterJacket', 'Red-Winter-jacket-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 120, 'Coat', '<p>Lorem Ipsum</p>', 'new', 0),
+(12, 4, 2, 4, '2020-04-28 14:49:28', 'Waxed Cotton Coat Woman', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 240, 'Coat Women', '<p>Lorem Ipsum</p>', 'sale', 5),
+(13, 1, 1, 3, '2020-04-28 14:49:35', 'Levis Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 445, 'Levis', '<p>Lorem Ipsum</p>', 'sale', 15),
+(14, 1, 1, 1, '2020-04-28 14:40:46', 'Merlin Engineer Jacket', 'Merlin-Enginner-Jacket.jpg', 'Merlin-Engineer-Jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 225, 'Jacket', '<p>Lorem Ipsum</p>', 'new', 0),
+(15, 5, 3, 3, '2020-04-28 14:42:59', 'Dress', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 185, 'Girl Jacket', '<p>Lorem Ipsum</p>', 'sale', 0),
+(17, 1, 2, 1, '2020-04-28 13:53:30', 'New Women Jacket', 'new-jacket-women-1.jpg', 'new-jacket-women-2.jpg', 'new-jacket-women-3.jpg', 68, 'Women Jacket', '<p>Lorem Ipsum</p>', 'new', 0);
 
 -- --------------------------------------------------------
 
